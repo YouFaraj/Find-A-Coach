@@ -8,8 +8,8 @@
       </span>
     </div>
     <div class="actions">
-      <router-link :to="coachContactLink">Contact</router-link>
-      <router-link :to="coachDetailsLink">View Details</router-link>
+      <base-button link mode="outline" :to="coachContactLink">Contact</base-button>
+      <base-button link :to="coachDetailsLink">View Details</base-button>
     </div>
   </li>
 </template>
@@ -22,10 +22,10 @@ export default {
       return this.firstName + ' ' + this.lastName;
     },
     coachContactLink() {
-      return this.$route.path + this.id + '/contact';
+      return this.$route.path + '/' + this.id + '/contact';
     },
     coachDetailsLink() {
-      return this.$route.path + this.id;
+      return this.$route.path + '/' + this.id;
     }
   }
 };
@@ -37,6 +37,7 @@ li {
   border: 1px solid #424242;
   border-radius: 12px;
   padding: 1rem;
+  list-style: none;
 }
 
 h3 {
