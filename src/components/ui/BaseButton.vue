@@ -2,7 +2,7 @@
   <button v-if="!link" :class="mode">
     <slot></slot>
   </button>
-  <router-link :to="to" v-else :class="mode">
+  <router-link v-else :to="to" :class="mode">
     <slot></slot>
   </router-link>
 </template>
@@ -28,7 +28,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 button,

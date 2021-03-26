@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .spinner {
   display: flex;
   justify-content: center;

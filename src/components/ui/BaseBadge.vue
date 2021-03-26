@@ -12,7 +12,7 @@ export default {
       return this.title.toUpperCase();
     }
   }
-};
+}
 </script>
 
 <style scoped>

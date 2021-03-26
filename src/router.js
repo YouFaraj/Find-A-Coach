@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import CoachDetails from './pages/coaches/CoachDetail.vue';
+
+import CoachDetail from './pages/coaches/CoachDetail.vue';
 import CoachesList from './pages/coaches/CoachesList.vue';
-import CoachRegisteration from './pages/coaches/CoachRegister.vue';
+import CoachRegistation from './pages/coaches/CoachRegistration.vue';
 import ContactCoach from './pages/requests/ContactCoach.vue';
-import RequestsRecieved from './pages/requests/RequestsRecieved.vue';
+import RequestsReceived from './pages/requests/RequestsReceived.vue';
 import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
@@ -13,12 +14,14 @@ const router = createRouter({
     { path: '/coaches', component: CoachesList },
     {
       path: '/coaches/:id',
+      component: CoachDetail,
       props: true,
-      component: CoachDetails,
-      children: [{ path: 'contact', component: ContactCoach }]
+      children: [
+        { path: 'contact', component: ContactCoach } // /coaches/c1/contact
+      ]
     },
-    { path: '/register', component: CoachRegisteration },
-    { path: '/requests', component: RequestsRecieved },
+    { path: '/register', component: CoachRegistation },
+    { path: '/requests', component: RequestsReceived },
     { path: '/:notFound(.*)', component: NotFound }
   ]
 });
